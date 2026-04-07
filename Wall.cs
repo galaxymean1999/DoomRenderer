@@ -15,6 +15,8 @@ namespace DoomRenderer {
 
 		public Vector2[] edge = new Vector2[2];
 
+		public bool[] onScreen = new bool[2];
+
 		public float[] distance = new float[2];
 
 		public float height;

@@ -36,6 +36,8 @@ namespace DoomRenderer {
 					}
 				}
 			}
+
+			gs.level.sectors[0].walls.Sort((a, b) => b.distance[0].CompareTo(a.distance[0]));
 		}
 
 		public void DrawWalls(Graphics g) {
@@ -77,8 +79,13 @@ namespace DoomRenderer {
 						if (ry > 0) {
 							if (angleToPlayer <= gs.player.FOV / 2 && angleToPlayer >= gs.player.FOV / -2) {
 								g.FillRectangle(Brushes.White, wallStripe[i]);
+
+								wall.onScreen[i] = true;
 							}
-						}		
+						}
+						else {
+							wall.onScreen[i] = false;
+						}
 					}
 
 					//

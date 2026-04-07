@@ -21,6 +21,7 @@ namespace DoomRenderer {
 			sectors.Add(new Sector());
 			sectors[0].walls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(1.0f, 2.0f), 10, Color.Red));
 			sectors[0].walls.Add(new Wall(new Vector2(1.0f, 2.0f), new Vector2(0.0f, 2.5f), 10, Color.Red));
+			sectors[0].walls.Add(new Wall(new Vector2(0.0f, 2.5f), new Vector2(0.0f, 3.5f), 10, Color.Red));
 		} 
 	}
 }
