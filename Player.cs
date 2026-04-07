@@ -12,5 +12,9 @@ namespace DoomRenderer {
 		}
 
 		public Vector2 position;
+
+		public float heading = 0;
+
+		public float FOV = MathF.PI / 3;
 	}
 }

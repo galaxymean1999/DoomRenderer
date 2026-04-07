@@ -5,7 +5,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Renderer {
+namespace DoomRenderer {
 	public class Sector {
 		public Sector() {
 			walls = new List<Wall>();

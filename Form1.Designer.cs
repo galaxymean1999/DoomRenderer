@@ -34,7 +34,7 @@
 			// updateTimer
 			// 
 			updateTimer.Enabled = true;
-			updateTimer.Interval = 1;
+			updateTimer.Interval = 32;
 			updateTimer.Tick += Update;
 			// 
 			// Form1

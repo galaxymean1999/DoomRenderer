@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
-using Renderer;
 
 namespace DoomRenderer {
 	public class Level {
@@ -20,8 +19,8 @@ namespace DoomRenderer {
 			sectors.Clear();
 
 			sectors.Add(new Sector());
-
-			sectors[0].walls.Add(new Wall(new Vector2(1.0f, 1.0f), new Vector2(2.0f, 1.0f), 10, Color.Red));
+			sectors[0].walls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(1.0f, 2.0f), 10, Color.Red));
+			sectors[0].walls.Add(new Wall(new Vector2(1.0f, 2.0f), new Vector2(0.0f, 2.5f), 10, Color.Red));
 		} 
 	}
 }
