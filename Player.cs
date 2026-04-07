@@ -16,5 +16,14 @@ namespace DoomRenderer {
 		public float heading = 0;
 
 		public float FOV = MathF.PI / 3;
+
+		public void NormaliseHeading() {
+			if (heading < -MathF.PI) {
+				heading += 2 * MathF.PI;
+			}
+			else if (heading > MathF.PI) {
+				heading -= 2 * MathF.PI;
+			}
+		}
 	}
 }

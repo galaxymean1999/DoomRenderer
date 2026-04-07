@@ -86,31 +86,27 @@ namespace DoomRenderer {
 					//
 					float dheight = MathF.Abs((float)wallStripe[0].Height - wallStripe[1].Height) / 2.0f;
 
-					int startScreenX = wallStripe[wallStripe[1].X > wallStripe[0].X ? 0 : 1].X;
-					int endScreenX = wallStripe[wallStripe[1].X > wallStripe[0].X ? 1 : 0].X;
+					Rectangle start = wallStripe[wallStripe[1].X > wallStripe[0].X ? 0 : 1];
+					Rectangle end = wallStripe[wallStripe[1].X > wallStripe[0].X ? 1 : 0];
 
-					int widthToFill = (int)MathF.Abs(wallStripe[0].X - wallStripe[1].X);
+					int widthToFill = (int)MathF.Abs(start.X - end.X);
 					
 					float heightStep = dheight / widthToFill;
-					
-					if (gs.player.position.X > wall.edge[0].X) {
-						heightStep *= -1;
-					}
 
 					int step = 0;
-					for (int x = startScreenX + 1; x < endScreenX - 1; x++) {
+					for (int x = start.X + 1; x < end.X - 1; x++) {
 						int wallHeight = 0;
 
-						if (wallStripe[1].Height > wallStripe[0].Height) {
-							wallHeight = (int)(wallStripe[1].Height - heightStep * step * 2);
+						if (start.Height > end.Height) {
+							wallHeight = (int)(start.Height - heightStep * step * 2);
 						}
 						else {
-							wallHeight = (int)(wallStripe[0].Height - heightStep * step * 2);
+							wallHeight = (int)(start.Height + heightStep * step * 2);
 						}
 
 						int y = (int)(ClientSize.Height / 2 - wallHeight / 2);
 
-						if (x >= 0) {
+						if (x >= 0 && x < ClientSize.Width) {
 							g.FillRectangle(Brushes.Red, x, y, 1, wallHeight);
 						}
 						

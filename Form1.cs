@@ -39,9 +39,13 @@ namespace DoomRenderer
 		private void Update(object sender, EventArgs e) {
 			if (keys.Contains(Keys.Left)) {
 				gs.player.heading -= 0.04f;
+
+				gs.player.NormaliseHeading();
 			}
 			else if (keys.Contains(Keys.Right)) {
 				gs.player.heading += 0.04f;
+
+				gs.player.NormaliseHeading();
 			}
 
 			if (keys.Contains(Keys.Up)) {
