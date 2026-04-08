@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 
 namespace DoomRenderer {
 	public class Sector {
-		public Sector() {
+		public Sector(int id) {
 			walls = new List<Wall>();
+
+			this.id = id;
 		}
+
+		public int id;
 
 		public List<Wall> walls;
 	}

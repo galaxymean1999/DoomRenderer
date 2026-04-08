@@ -31,19 +31,19 @@ namespace DoomRenderer
 			Graphics g = e.Graphics;
 			g.Clear(Color.Black);
 
-			renderer.DrawWalls(g);
+			renderer.DrawSector(g, gs.level.sectors[0]);
 
 			renderer.DrawMinimap(g);
 		}
 
 		private void Update(object sender, EventArgs e) {
 			if (keys.Contains(Keys.Left)) {
-				gs.player.heading -= 0.04f;
+				gs.player.heading += 0.04f;
 
 				gs.player.NormaliseHeading();
 			}
 			else if (keys.Contains(Keys.Right)) {
-				gs.player.heading += 0.04f;
+				gs.player.heading -= 0.04f;
 
 				gs.player.NormaliseHeading();
 			}
