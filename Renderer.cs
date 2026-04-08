@@ -13,6 +13,8 @@ namespace DoomRenderer {
 			this.ClientSize = clientSize;
 
 			focalLength = (ClientSize.Width / 2) / MathF.Tan(gs.player.FOV / 2);
+
+			zBuffer = new float[ClientSize.Width + 1];
 		}
 
 		private GameState gs;
@@ -20,6 +22,8 @@ namespace DoomRenderer {
 		private Size ClientSize;
 
 		private float focalLength;
+
+		private float[] zBuffer;
 
 		private float NormaliseAngle(float a) {
 			if (a < -MathF.PI) {
